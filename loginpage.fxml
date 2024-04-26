@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.shape.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.image.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="810.0" prefWidth="1213.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="crimemgmt.LoginPageController">
+   <children>
+      <ImageView fitHeight="810.0" fitWidth="1221.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../img/Lion-Capital_Sarnath.jpg" />
+         </image>
+      </ImageView>
+      <AnchorPane layoutX="797.0" layoutY="157.0" prefHeight="331.0" prefWidth="354.0" style="-fx-border-color: white; -fx-border-radius: 12.5%;">
+         <children>
+            <TextField fx:id="usrnm" layoutX="129.0" layoutY="84.0" promptText="UID" style="-fx-border-width: 0 0 2px 0; -fx-border-color: black;" />
+            <PasswordField fx:id="pswd" layoutX="129.0" layoutY="170.0" promptText="Password" style="-fx-border-width: 0 0 2px 0; -fx-border-color: black;" />
+            <ImageView fitHeight="52.0" fitWidth="36.0" layoutX="67.0" layoutY="80.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../img/username.jpg" />
+               </image></ImageView>
+            <ImageView fitHeight="39.0" fitWidth="61.0" layoutX="71.0" layoutY="166.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../img/password.png" />
+               </image></ImageView>
+            <Label layoutX="162.0" layoutY="14.0" prefHeight="27.0" prefWidth="64.0" text="CITIZEN" textFill="WHITE">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Label>
+            <Button fx:id="loginbtn" layoutX="158.0" layoutY="277.0" mnemonicParsing="false" onAction="#loginbtnOnAction" styleClass="login-btn" stylesheets="@admin.css" text="LOGIN" />
+         </children>
+      </AnchorPane>
+      <Button fx:id="missingbtn" layoutX="558.0" layoutY="680.0" mnemonicParsing="false" onAction="#switchpane" prefHeight="39.0" prefWidth="128.0" styleClass="login-btn" stylesheets="@admin.css" text="MISSING" />
+      <Button fx:id="forgotpswdbtn" layoutX="558.0" layoutY="732.0" mnemonicParsing="false" onAction="#switchpane" prefHeight="39.0" prefWidth="128.0" styleClass="login-btn" stylesheets="@admin.css" text="Forgot Password" />
+      <Button fx:id="wantedbtn" layoutX="558.0" layoutY="627.0" mnemonicParsing="false" onAction="#switchpane" prefHeight="39.0" prefWidth="128.0" styleClass="login-btn" stylesheets="@admin.css" text="WANTED" />
+      <Button layoutX="558.0" layoutY="572.0" mnemonicParsing="false" onAction="#signupbtnOnAction" prefHeight="39.0" prefWidth="128.0" styleClass="login-btn" stylesheets="@admin.css" text="SIGN UP" />
+      <AnchorPane layoutX="91.0" layoutY="170.0" prefHeight="331.0" prefWidth="354.0" style="-fx-border-color: white; -fx-border-radius: 12.5%;">
+         <children>
+            <TextField fx:id="polusrnm" layoutX="129.0" layoutY="84.0" promptText="UID" style="-fx-border-width: 0 0 2px 0; -fx-border-color: black;" />
+            <PasswordField fx:id="polpswd" layoutX="129.0" layoutY="170.0" promptText="Password" style="-fx-border-width: 0 0 2px 0; -fx-border-color: black;" />
+            <ImageView fitHeight="52.0" fitWidth="36.0" layoutX="67.0" layoutY="80.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../img/username.jpg" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="39.0" fitWidth="61.0" layoutX="71.0" layoutY="166.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../img/password.png" />
+               </image>
+            </ImageView>
+            <Label layoutX="162.0" layoutY="14.0" prefHeight="27.0" prefWidth="64.0" text="POLICE" textFill="WHITE">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Label>
+            <Button fx:id="polloginbtn" layoutX="158.0" layoutY="277.0" mnemonicParsing="false" onAction="#polloginbtnOnAction" styleClass="login-btn" stylesheets="@admin.css" text="LOGIN" />
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>

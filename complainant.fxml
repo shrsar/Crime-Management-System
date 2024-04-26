@@ -1,0 +1,165 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.chart.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="792.0" prefWidth="1214.0" style="-fx-background-color: #d0d9d2;" stylesheets="@admin.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="crimemgmt.LoginPageController">
+   <children>
+      <Button fx:id="compreportbtn" layoutX="61.0" layoutY="324.0" mnemonicParsing="false" onAction="#switchpane" prefHeight="42.0" prefWidth="121.0" styleClass="login-btn" text="REPORT" />
+      <Button fx:id="comptrackbtn" layoutX="59.0" layoutY="554.0" mnemonicParsing="false" onAction="#switchpane" prefHeight="42.0" prefWidth="121.0" styleClass="login-btn" text="TRACK" />
+      <Button fx:id="compdashboardbtn" layoutX="59.0" layoutY="114.0" mnemonicParsing="false" onAction="#switchpane" prefHeight="42.0" prefWidth="121.0" styleClass="login-btn" text="DASHBOARD" />
+      <Separator layoutX="230.0" orientation="VERTICAL" prefHeight="792.0" prefWidth="7.0" />
+      <Button fx:id="logoutbtn" layoutX="-2.0" layoutY="719.0" mnemonicParsing="false" onAction="#logoutbtnOnAction" prefHeight="42.0" prefWidth="121.0" styleClass="login-btn" text="LOGOUT" />
+      <Label layoutX="94.0" layoutY="34.0" prefHeight="21.0" prefWidth="55.0" text="Your ID">
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font>
+      </Label>
+      <Label fx:id="cmpid" layoutX="104.0" layoutY="55.0">
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font></Label>
+      <AnchorPane fx:id="compreportpane" layoutX="237.0" prefHeight="792.0" prefWidth="976.0" visible="false">
+         <children>
+            <ComboBox fx:id="comp_crime" layoutX="160.0" layoutY="65.0" onAction="#crimesList" prefHeight="31.0" prefWidth="184.0" />
+            <ComboBox fx:id="comp_station" layoutX="160.0" layoutY="140.0" onAction="#stationsList" prefHeight="31.0" prefWidth="184.0" />
+            <DatePicker fx:id="comp_date" layoutX="167.0" layoutY="301.0" prefHeight="31.0" prefWidth="184.0" />
+            <TextArea fx:id="comp_descrpt" layoutX="165.0" layoutY="385.0" prefHeight="200.0" prefWidth="200.0" />
+            <AnchorPane layoutX="635.0" layoutY="55.0" prefHeight="200.0" prefWidth="200.0" style="-fx-border-color: black;">
+               <children>
+                  <ImageView fx:id="custreportimg" fitHeight="200.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true" />
+               </children>
+            </AnchorPane>
+            <Button fx:id="custimprtbtn" layoutX="515.0" layoutY="69.0" mnemonicParsing="false" onAction="#imprtbtnOnAction" prefHeight="31.0" prefWidth="86.0" styleClass="login-btn" text="IMPORT" />
+            <Label layoutX="71.0" layoutY="68.0" prefHeight="25.0" prefWidth="45.0" text="Crime">
+               <font>
+                  <Font name="System Bold" size="16.0" />
+               </font>
+            </Label>
+            <Label layoutX="71.0" layoutY="143.0" prefHeight="25.0" prefWidth="55.0" text="Station">
+               <font>
+                  <Font name="System Bold" size="16.0" />
+               </font>
+            </Label>
+            <Label layoutX="78.0" layoutY="304.0" prefHeight="25.0" prefWidth="55.0" text="Date">
+               <font>
+                  <Font name="System Bold" size="16.0" />
+               </font>
+            </Label>
+            <Label layoutX="71.0" layoutY="391.0" prefHeight="25.0" prefWidth="55.0" text="Details">
+               <font>
+                  <Font name="System Bold" size="16.0" />
+               </font>
+            </Label>
+            <Label layoutX="531.0" layoutY="107.0" prefHeight="25.0" prefWidth="55.0" text="Proof">
+               <font>
+                  <Font name="System Bold" size="16.0" />
+               </font>
+            </Label>
+            <Button layoutX="346.0" layoutY="716.0" mnemonicParsing="false" onAction="#complodgebtnOnAction" prefHeight="31.0" prefWidth="86.0" styleClass="login-btn" text="LODGE" />
+            <Button fx:id="complodgerefbtn" layoutX="438.0" layoutY="716.0" mnemonicParsing="false" onAction="#switchpane" prefHeight="31.0" prefWidth="94.0" styleClass="login-btn" text="REFRESH" />
+            <ComboBox fx:id="vicgen" layoutX="160.0" layoutY="218.0" prefHeight="31.0" prefWidth="184.0" />
+            <Label layoutX="78.0" layoutY="221.0" prefHeight="25.0" prefWidth="55.0" text="Victim">
+               <font>
+                  <Font name="System Bold" size="16.0" />
+               </font>
+            </Label>
+         </children>
+      </AnchorPane>
+      <AnchorPane fx:id="comptrackpane" layoutX="234.0" prefHeight="792.0" prefWidth="976.0" visible="false">
+         <children>
+            <TableView fx:id="comp_table" prefHeight="439.0" prefWidth="980.0">
+               <columns>
+                  <TableColumn fx:id="comp_fid" prefWidth="140.0" text="FIR ID" />
+                  <TableColumn fx:id="comp_crme" prefWidth="140.0" text="Crime" />
+                  <TableColumn fx:id="comp_gdr" prefWidth="140.0" text="Gender" />
+                  <TableColumn fx:id="comp_stn" prefWidth="140.0" text="Station" />
+                  <TableColumn fx:id="comp_cdate" prefWidth="140.0" text="Date of Crime" />
+                  <TableColumn fx:id="comp_fdate" prefWidth="140.0" text="Date of Filing" />
+                  <TableColumn fx:id="comp_sts" prefWidth="140.0" text="Status" />
+               </columns>
+            </TableView>
+            <TextField fx:id="comptrack_fid" layoutX="125.0" layoutY="477.0" prefHeight="31.0" prefWidth="200.0" />
+            <Label layoutX="46.0" layoutY="482.0" text="FIR ID">
+               <font>
+                  <Font name="System Bold" size="15.0" />
+               </font>
+            </Label>
+            <AnchorPane layoutX="466.0" layoutY="468.0" prefHeight="200.0" prefWidth="200.0" style="-fx-border-color: black;">
+               <children>
+                  <ImageView fx:id="comptrack_img" fitHeight="200.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true" />
+               </children>
+            </AnchorPane>
+            <TextArea fx:id="comptrack_descrpt" layoutX="706.0" layoutY="468.0" prefHeight="208.0" prefWidth="218.0" />
+            <Button layoutX="632.0" layoutY="689.0" mnemonicParsing="false" onAction="#showtrackbtnOnAction" prefHeight="42.0" prefWidth="94.0" styleClass="login-btn" text="SHOW" />
+            <Button fx:id="comptrackrefbtn" layoutX="300.0" layoutY="689.0" mnemonicParsing="false" onAction="#refbtnOnAction" prefHeight="42.0" prefWidth="121.0" styleClass="login-btn" text="REFRESH" />
+         </children>
+      </AnchorPane>
+      <AnchorPane fx:id="compdashboardpane" layoutX="234.0" prefHeight="792.0" prefWidth="976.0" visible="false">
+         <children>
+            <AnchorPane prefHeight="208.0" prefWidth="975.0">
+               <children>
+                  <AnchorPane prefHeight="213.0" prefWidth="437.5" style="-fx-border-color: black;">
+                     <children>
+                        <Label layoutX="14.0" layoutY="52.0" prefHeight="27.0" prefWidth="395.0" text="Crimes Reported Today in your area">
+                           <font>
+                              <Font name="System Bold" size="18.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="stncrm" layoutX="8.0" layoutY="169.0" prefHeight="21.0" prefWidth="395.0" />
+                     </children>
+                  </AnchorPane>
+                  <AnchorPane layoutX="438.0" prefHeight="213.0" prefWidth="542.0" style="-fx-border-color: black;">
+                     <children>
+                        <Label layoutX="14.0" layoutY="54.0" prefHeight="27.0" prefWidth="200.0" text="Total Crimes Today">
+                           <font>
+                              <Font name="System Bold" size="18.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="totcrm" layoutX="8.0" layoutY="180.0" prefHeight="21.0" prefWidth="519.0" />
+                     </children>
+                  </AnchorPane>
+               </children>
+            </AnchorPane>
+            <AnchorPane layoutX="2.0" layoutY="213.0" prefHeight="578.0" prefWidth="976.0">
+               <children>
+                  <BarChart fx:id="vicgenbar" prefHeight="289.0" prefWidth="488.0">
+                     <xAxis>
+                        <CategoryAxis side="BOTTOM" />
+                     </xAxis>
+                     <yAxis>
+                        <NumberAxis side="LEFT" />
+                     </yAxis>
+                  </BarChart>
+                  <BarChart fx:id="allstncrmbar" layoutX="488.0" prefHeight="289.0" prefWidth="488.0">
+                     <xAxis>
+                        <CategoryAxis side="BOTTOM" />
+                     </xAxis>
+                     <yAxis>
+                        <NumberAxis side="LEFT" />
+                     </yAxis>
+                  </BarChart>
+                  <LineChart fx:id="curstncrmline" layoutY="289.0" prefHeight="289.0" prefWidth="976.0">
+                     <xAxis>
+                        <CategoryAxis side="BOTTOM" />
+                     </xAxis>
+                     <yAxis>
+                        <NumberAxis side="LEFT" />
+                     </yAxis>
+                  </LineChart>
+               </children>
+            </AnchorPane>
+         </children></AnchorPane>
+      <Label fx:id="bcklbl" layoutX="505.0" layoutY="326.0" text="CLICK ON ANY OF THE BUTTONS">
+         <font>
+            <Font size="26.0" />
+         </font>
+      </Label>
+   </children>
+</AnchorPane>

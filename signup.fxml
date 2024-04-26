@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.image.*?>
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane fx:id="sgnuppane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="810.0" prefWidth="1213.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="crimemgmt.LoginPageController">
+   <children>
+      <ImageView fitHeight="810.0" fitWidth="1221.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../img/Lion-Capital_Sarnath.jpg" />
+         </image>
+      </ImageView>
+      <Button layoutX="565.0" layoutY="719.0" mnemonicParsing="false" onAction="#signuppagebtnOnAction" prefHeight="31.0" prefWidth="128.0" styleClass="login-btn" stylesheets="@admin.css" text="SIGN UP" />
+      <TextField fx:id="sgnup_uname" layoutX="192.0" layoutY="23.0" prefHeight="31.0" prefWidth="309.0" promptText="Username" />
+      <TextField fx:id="sgnup_pswd" layoutX="192.0" layoutY="92.0" prefHeight="31.0" prefWidth="309.0" promptText="Password" />
+      <Label layoutX="76.0" layoutY="23.0" prefHeight="39.0" prefWidth="71.0" text="Username" textFill="#fffafa">
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font>
+      </Label>
+      <Label layoutX="76.0" layoutY="91.0" prefHeight="39.0" prefWidth="71.0" text="Password" textFill="#fffafa">
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font>
+      </Label>
+      <Label layoutX="76.0" layoutY="164.0" prefHeight="39.0" prefWidth="60.0" text="City" textFill="#fffafa">
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font>
+      </Label>
+      <TextField fx:id="sgnup_phn" layoutX="193.0" layoutY="343.0" prefHeight="31.0" prefWidth="309.0" promptText="Phone(DO NOT PREFIX WITH +91)" />
+      <Label layoutX="76.0" layoutY="342.0" prefHeight="39.0" prefWidth="50.0" text="Phone" textFill="#fffafa">
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font>
+      </Label>
+      <Label layoutX="76.0" layoutY="254.0" prefHeight="39.0" prefWidth="89.0" text="Security Key" textFill="#fffafa">
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font>
+      </Label>
+      <TextField fx:id="sgnup_seckey" layoutX="193.0" layoutY="255.0" prefHeight="31.0" prefWidth="309.0" promptText="Security Key" />
+      <Button fx:id="readbtn" layoutX="514.0" layoutY="258.0" mnemonicParsing="false" onAction="#readbtnOnAction" prefHeight="26.0" prefWidth="95.0" styleClass="login-btn" stylesheets="@admin.css" text="READ!" />
+      <ComboBox fx:id="sgnup_city" layoutX="193.0" layoutY="168.0" prefHeight="31.0" prefWidth="309.0" />
+      <Button layoutX="514.0" layoutY="168.0" mnemonicParsing="false" onAction="#citiesList" prefHeight="26.0" prefWidth="95.0" styleClass="login-btn" stylesheets="@admin.css" text="SHOW" />
+      <Button layoutX="514.0" layoutY="432.0" mnemonicParsing="false" onAction="#sendotpbtnOnAction1" prefHeight="26.0" prefWidth="95.0" styleClass="login-btn" stylesheets="@admin.css" text="SEND OTP" />
+      <TextField fx:id="sgnup_otp" layoutX="193.0" layoutY="429.0" prefHeight="31.0" prefWidth="309.0" promptText="OTP" />
+      <Label layoutX="76.0" layoutY="428.0" prefHeight="39.0" prefWidth="50.0" text="OTP" textFill="#fffafa">
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font>
+      </Label>
+   </children>
+</AnchorPane>

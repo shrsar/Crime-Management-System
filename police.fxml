@@ -1,0 +1,301 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.chart.*?>
+<?import java.lang.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="792.0" prefWidth="1214.0" style="-fx-background-color: #d0d9d2;" stylesheets="@admin.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="crimemgmt.LoginPageController">
+   <children>
+      <Button fx:id="polstatusbtn" layoutX="61.0" layoutY="174.0" mnemonicParsing="false" onAction="#switchpane" prefHeight="42.0" prefWidth="128.0" styleClass="login-btn" text="STATUS" />
+      <Button fx:id="poltrackbtn" layoutX="58.0" layoutY="234.0" mnemonicParsing="false" onAction="#switchpane" prefHeight="42.0" prefWidth="134.0" styleClass="login-btn" text="CASES" />
+      <Button fx:id="poldashboardbtn" layoutX="61.0" layoutY="113.0" mnemonicParsing="false" onAction="#switchpane" prefHeight="42.0" prefWidth="128.0" styleClass="login-btn" text="DASHBOARD" />
+      <Separator layoutX="230.0" orientation="VERTICAL" prefHeight="792.0" prefWidth="7.0" />
+      <Button fx:id="logoutbtn" layoutX="1.0" layoutY="724.0" mnemonicParsing="false" onAction="#logoutbtnOnAction" prefHeight="42.0" prefWidth="121.0" styleClass="login-btn" text="LOGOUT" />
+      <AnchorPane fx:id="statuspane" layoutX="237.0" prefHeight="792.0" prefWidth="976.0" visible="false">
+         <children>
+            <TextField fx:id="polstsfirid" layoutX="136.0" layoutY="53.0" prefHeight="31.0" prefWidth="200.0" />
+            <Label layoutX="80.0" layoutY="58.0" prefHeight="21.0" prefWidth="43.0" text="FIR ID">
+               <font>
+                  <Font name="System Bold" size="15.0" />
+               </font>
+            </Label>
+            <TextArea fx:id="polstsprg" layoutX="136.0" layoutY="131.0" prefHeight="299.0" prefWidth="349.0" />
+            <AnchorPane layoutX="136.0" layoutY="466.0" prefHeight="201.0" prefWidth="201.0" style="-fx-border-color: black;">
+               <children>
+                  <ImageView fx:id="polstsimg" fitHeight="200.0" fitWidth="200.0" layoutX="-2.0" layoutY="-1.0" pickOnBounds="true" preserveRatio="true" />
+               </children>
+            </AnchorPane>
+            <Label layoutX="46.0" layoutY="131.0" prefHeight="27.0" prefWidth="64.0" text="Progress">
+               <font>
+                  <Font name="System Bold" size="15.0" />
+               </font>
+            </Label>
+            <Label layoutX="61.0" layoutY="466.0" prefHeight="27.0" prefWidth="49.0" text="Photo">
+               <font>
+                  <Font name="System Bold" size="15.0" />
+               </font>
+            </Label>
+            <Button layoutX="391.0" layoutY="724.0" mnemonicParsing="false" onAction="#stsgetbtnOnAction" prefHeight="31.0" prefWidth="90.0" styleClass="login-btn" text="GET" />
+            <Button layoutX="33.0" layoutY="164.0" mnemonicParsing="false" onAction="#polstssetdescrpt" prefHeight="31.0" prefWidth="90.0" styleClass="login-btn" text="SET" />
+            <Button fx:id="polstsimgimprtbtn" layoutX="33.0" layoutY="501.0" mnemonicParsing="false" onAction="#imprtbtnOnAction" prefHeight="31.0" prefWidth="90.0" styleClass="login-btn" text="IMPORT" />
+            <Button layoutX="33.0" layoutY="543.0" mnemonicParsing="false" onAction="#polstssetprf" prefHeight="31.0" prefWidth="90.0" styleClass="login-btn" text="SET" />
+         </children></AnchorPane>
+      <AnchorPane fx:id="casespane" layoutX="234.0" prefHeight="792.0" prefWidth="976.0" visible="false">
+         <children>
+            <TableView fx:id="polcomp_table" prefHeight="439.0" prefWidth="980.0">
+               <columns>
+                  <TableColumn fx:id="polcomp_fid" prefWidth="140.0" text="FIR ID" />
+                  <TableColumn fx:id="polcomp_gndr" prefWidth="140.0" text="Victim" />
+                  <TableColumn fx:id="polcomp_fdate" prefWidth="140.0" text="Date of Filing" />
+                  <TableColumn fx:id="polcomp_cdate" prefWidth="140.0" text="Date of Crime" />
+                  <TableColumn fx:id="polcomp_crme" prefWidth="140.0" text="Crime" />
+                  <TableColumn fx:id="polcomp_cmp" prefWidth="140.0" text="Complainant" />
+                  <TableColumn fx:id="polcomp_sts" prefWidth="140.0" text="Status" />
+               </columns>
+            </TableView>
+            <TextField fx:id="chkstsfirid" layoutX="125.0" layoutY="477.0" prefHeight="31.0" prefWidth="200.0" />
+            <Label layoutX="46.0" layoutY="482.0" text="FIR ID">
+               <font>
+                  <Font name="System Bold" size="15.0" />
+               </font>
+            </Label>
+            <AnchorPane layoutX="502.0" layoutY="467.0" prefHeight="200.0" prefWidth="200.0" style="-fx-border-color: black;">
+               <children>
+                  <ImageView fx:id="chkstsimg" fitHeight="200.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true" />
+               </children>
+            </AnchorPane>
+            <Button layoutX="661.0" layoutY="689.0" mnemonicParsing="false" onAction="#polshwbtnOnAction" prefHeight="42.0" prefWidth="121.0" styleClass="login-btn" text="SHOW" />
+            <TextArea fx:id="chkstsdes" layoutX="748.0" layoutY="467.0" prefHeight="208.0" prefWidth="218.0" />
+            <Button layoutX="338.0" layoutY="464.0" mnemonicParsing="false" onAction="#reslvbtnOnAction" prefHeight="27.0" prefWidth="100.0" styleClass="login-btn" text="RESOLVED" />
+            <Button layoutX="369.0" layoutY="697.0" mnemonicParsing="false" onAction="#casesrefbtnOnAction" prefHeight="42.0" prefWidth="121.0" styleClass="login-btn" text="REFRESH" />
+            <Button layoutX="338.0" layoutY="495.0" mnemonicParsing="false" onAction="#unreslvbtnOnAction" prefHeight="27.0" prefWidth="100.0" styleClass="login-btn" text="REOPEN" />
+         </children>
+      </AnchorPane>
+      <AnchorPane fx:id="dashboardpane" layoutX="234.0" prefHeight="792.0" prefWidth="976.0" visible="false">
+         <children>
+            <AnchorPane prefHeight="208.0" prefWidth="975.0">
+               <children>
+                  <AnchorPane prefHeight="213.0" prefWidth="437.5" style="-fx-border-color: black;">
+                     <children>
+                        <Label layoutX="14.0" layoutY="52.0" prefHeight="27.0" prefWidth="412.0" text="Crimes Reported Today In your area">
+                           <font>
+                              <Font name="System Bold" size="18.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="stncrm" layoutX="14.0" layoutY="170.0" prefHeight="21.0" prefWidth="412.0" />
+                     </children>
+                  </AnchorPane>
+                  <AnchorPane layoutX="438.0" prefHeight="213.0" prefWidth="542.0" style="-fx-border-color: black;">
+                     <children>
+                        <Label layoutX="14.0" layoutY="54.0" prefHeight="27.0" prefWidth="258.0" text="Total Reported Crimes Today">
+                           <font>
+                              <Font name="System Bold" size="18.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="totcrm" layoutX="5.0" layoutY="180.0" prefHeight="21.0" prefWidth="522.0" />
+                     </children>
+                  </AnchorPane>
+               </children>
+            </AnchorPane>
+            <AnchorPane layoutY="213.0" prefHeight="578.0" prefWidth="976.0">
+               <children>
+                  <BarChart fx:id="vicgenbar" prefHeight="289.0" prefWidth="488.0">
+                    <xAxis>
+                      <CategoryAxis side="BOTTOM" />
+                    </xAxis>
+                    <yAxis>
+                      <NumberAxis side="LEFT" />
+                    </yAxis>
+                  </BarChart>
+                  <BarChart fx:id="allstncrmbar" layoutX="488.0" prefHeight="289.0" prefWidth="488.0">
+                     <xAxis>
+                        <CategoryAxis side="BOTTOM" />
+                     </xAxis>
+                     <yAxis>
+                        <NumberAxis side="LEFT" />
+                     </yAxis>
+                  </BarChart>
+                  <LineChart fx:id="curstncrmline" layoutY="289.0" prefHeight="289.0" prefWidth="976.0">
+                    <xAxis>
+                      <CategoryAxis side="BOTTOM" />
+                    </xAxis>
+                    <yAxis>
+                      <NumberAxis side="LEFT" />
+                    </yAxis>
+                  </LineChart>
+               </children></AnchorPane>
+         </children>
+      </AnchorPane>
+      <Button fx:id="polcrimbtn" layoutX="58.0" layoutY="295.0" mnemonicParsing="false" onAction="#switchpane" prefHeight="42.0" prefWidth="134.0" styleClass="login-btn" text="CRIMINALS" />
+      <AnchorPane fx:id="crimpane" layoutX="237.0" prefHeight="792.0" prefWidth="976.0" visible="false">
+         <children>
+            <AnchorPane prefHeight="299.0" prefWidth="976.0">
+               <children>
+                  <TableView fx:id="addcrimtable" prefHeight="299.0" prefWidth="976.0">
+                    <columns>
+                      <TableColumn fx:id="addcrm_cid" prefWidth="162.67" text="Criminal ID" />
+                      <TableColumn fx:id="addcrm_fid" prefWidth="162.67" text="FIR ID" />
+                        <TableColumn fx:id="addcrm_nme" prefWidth="162.67" text="Name" />
+                        <TableColumn fx:id="addcrm_dob" prefWidth="162.67" text="DOB" />
+                        <TableColumn fx:id="addcrm_doa" prefWidth="162.67" text="Date of Arrest" />
+                        <TableColumn fx:id="addcrm_plc" prefWidth="162.67" text="Place of Arrest" />
+                    </columns>
+                  </TableView>
+               </children>
+            </AnchorPane>
+            <TextField fx:id="addcrmfid" layoutX="187.0" layoutY="390.0" />
+            <TextField fx:id="addcrmnme" layoutX="185.0" layoutY="437.0" />
+            <AnchorPane layoutX="698.0" layoutY="343.0" prefHeight="200.0" prefWidth="200.0" style="-fx-border-color: black;">
+               <children>
+                  <ImageView fx:id="addcrm_img" fitHeight="200.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true" />
+               </children>
+            </AnchorPane>
+            <Button fx:id="addcrmimprtbtn" layoutX="588.0" layoutY="359.0" mnemonicParsing="false" onAction="#imprtbtnOnAction" prefHeight="31.0" prefWidth="90.0" styleClass="login-btn" text="IMPORT" />
+            <Label layoutX="94.0" layoutY="395.0" text="FIR ID">
+               <font>
+                  <Font name="System Bold" size="15.0" />
+               </font>
+            </Label>
+            <Label layoutX="92.0" layoutY="442.0" text="Name">
+               <font>
+                  <Font name="System Bold" size="15.0" />
+               </font>
+            </Label>
+            <Label layoutX="100.0" layoutY="490.0" text="DOB">
+               <font>
+                  <Font name="System Bold" size="15.0" />
+               </font>
+            </Label>
+            <Label layoutX="63.0" layoutY="542.0" text="Date of Arrest">
+               <font>
+                  <Font name="System Bold" size="15.0" />
+               </font>
+            </Label>
+            <DatePicker fx:id="addcrmdob" layoutX="188.0" layoutY="485.0" prefHeight="31.0" prefWidth="187.0" />
+            <DatePicker fx:id="addcrmdoa" layoutX="185.0" layoutY="537.0" prefHeight="31.0" prefWidth="187.0" />
+            <TextField fx:id="addcrmplc" layoutX="184.0" layoutY="589.0" />
+            <Label layoutX="60.0" layoutY="594.0" text="Place of Arrest">
+               <font>
+                  <Font name="System Bold" size="15.0" />
+               </font>
+            </Label>
+            <Button layoutX="53.0" layoutY="700.0" mnemonicParsing="false" onAction="#addcrmbtnOnAction" prefHeight="27.0" prefWidth="100.0" styleClass="login-btn" text="INSERT" />
+            <Button layoutX="164.0" layoutY="700.0" mnemonicParsing="false" onAction="#delcrmbtnOnAction" prefHeight="27.0" prefWidth="100.0" styleClass="login-btn" text="DELETE" />
+            <Button layoutX="273.0" layoutY="700.0" mnemonicParsing="false" onAction="#refcrmbtnOnAction" prefHeight="27.0" prefWidth="100.0" styleClass="login-btn" text="REFRESH" />
+            <Label layoutX="94.0" layoutY="349.0" text="CID">
+               <font>
+                  <Font name="System Bold" size="15.0" />
+               </font>
+            </Label>
+            <TextField fx:id="addcrmcid" layoutX="187.0" layoutY="344.0" />
+            <Button layoutX="588.0" layoutY="401.0" mnemonicParsing="false" onAction="#showcrmsbtnOnAction" prefHeight="31.0" prefWidth="90.0" styleClass="login-btn" text="SHOW" />
+         </children>
+      </AnchorPane>
+      <Label layoutX="101.0" layoutY="26.0" text="POLICE">
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font>
+      </Label>
+      <Label fx:id="polstn" layoutX="93.0" layoutY="47.0">
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font>
+      </Label>
+      <Label fx:id="bcklbl" layoutX="515.0" layoutY="336.0" text="CLICK ON ANY OF THE BUTTONS">
+         <font>
+            <Font size="26.0" />
+         </font>
+      </Label>
+      <Button fx:id="addwntdbtn" layoutX="58.0" layoutY="353.0" mnemonicParsing="false" onAction="#switchpane" prefHeight="42.0" prefWidth="134.0" styleClass="login-btn" text="ADD WANTED" />
+      <AnchorPane fx:id="addwntdpane" layoutX="234.0" layoutY="-1.0" prefHeight="792.0" prefWidth="980.0" stylesheets="@admin.css" visible="false">
+         <children>
+            <TableView fx:id="addwntd_table" prefHeight="329.0" prefWidth="980.0">
+              <columns>
+                <TableColumn fx:id="addwntd_fir" prefWidth="326.66" text="FIR ID" />
+                  <TableColumn fx:id="addwntd_crme" prefWidth="326.66" text="Crime" />
+                  <TableColumn fx:id="addwntd_stn" prefWidth="326.66" text="Station" />
+              </columns>
+            </TableView>
+            <Label layoutX="56.0" layoutY="422.0" prefHeight="21.0" prefWidth="49.0" text="FIR ID">
+               <font>
+                  <Font name="System Bold" size="15.0" />
+               </font>
+            </Label>
+            <Label layoutX="56.0" layoutY="486.0" prefHeight="21.0" prefWidth="49.0" text="Crime">
+               <font>
+                  <Font name="System Bold" size="15.0" />
+               </font>
+            </Label>
+            <ComboBox fx:id="comp_crime" layoutX="131.0" layoutY="481.0" prefHeight="31.0" prefWidth="193.0" />
+            <TextField fx:id="addwntd_fid" layoutX="129.0" layoutY="417.0" prefHeight="31.0" prefWidth="193.0" />
+            <Button fx:id="addwntd_ins" layoutX="66.0" layoutY="674.0" mnemonicParsing="false" onAction="#inswntdbtnOnAction" prefHeight="31.0" prefWidth="87.0" styleClass="login-btn" text="INSERT" />
+            <Button fx:id="addwntd_del" layoutX="164.0" layoutY="674.0" mnemonicParsing="false" onAction="#delwntdbtnOnAction" prefHeight="31.0" prefWidth="87.0" styleClass="login-btn" text="DELETE" />
+            <Button fx:id="addwntd_updt" layoutX="259.0" layoutY="674.0" mnemonicParsing="false" onAction="#updtwntdbtnOnAction" prefHeight="31.0" prefWidth="87.0" styleClass="login-btn" text="UPDATE" />
+            <AnchorPane layoutX="722.0" layoutY="386.0" prefHeight="201.0" prefWidth="201.0" style="-fx-border-color: black;">
+               <children>
+                  <ImageView fx:id="addwntd_img" fitHeight="200.0" fitWidth="200.0" layoutX="1.0" pickOnBounds="true" preserveRatio="true" />
+               </children>
+            </AnchorPane>
+            <Button fx:id="addwntd_imprtbtn" layoutX="621.0" layoutY="396.0" mnemonicParsing="false" onAction="#imprtbtnOnAction" prefHeight="31.0" prefWidth="87.0" styleClass="login-btn" text="IMPORT" />
+            <Button fx:id="addwntd_shw" layoutX="621.0" layoutY="433.0" mnemonicParsing="false" onAction="#wntdshwbtnOnAction" prefHeight="31.0" prefWidth="87.0" styleClass="login-btn" text="SHOW" />
+            <Button fx:id="addwntd_ref" layoutX="353.0" layoutY="674.0" mnemonicParsing="false" onAction="#wntdrefbtnOnAction" prefHeight="31.0" prefWidth="87.0" styleClass="login-btn" text="REFRESH" />
+         </children>
+      </AnchorPane>
+      <Button fx:id="showusrsbtn" layoutX="58.0" layoutY="472.0" mnemonicParsing="false" onAction="#switchpane" prefHeight="42.0" prefWidth="134.0" styleClass="login-btn" text="ALL USERS" />
+      <AnchorPane fx:id="shwusrpane" layoutX="237.0" prefHeight="792.0" prefWidth="976.0" visible="false">
+         <children>
+            <TableView fx:id="usrlst_table" prefHeight="792.0" prefWidth="976.0">
+               <columns>
+                  <TableColumn fx:id="usrlst_uid" prefWidth="325.33" text="UID" />
+                  <TableColumn fx:id="usrlst_uname" prefWidth="325.33" text="Username" />
+                  <TableColumn fx:id="usrlst_phn" prefWidth="325.33" text="Phone" />
+               </columns>
+            </TableView>
+         </children>
+      </AnchorPane>
+      <Button fx:id="msbtn" layoutX="58.0" layoutY="412.0" mnemonicParsing="false" onAction="#switchpane" prefHeight="42.0" prefWidth="134.0" styleClass="login-btn" text="MISSING" />
+      <AnchorPane fx:id="mspane" layoutX="234.0" prefHeight="792.0" prefWidth="976.0" visible="false">
+         <children>
+            <TableView fx:id="addms_table" prefHeight="439.0" prefWidth="980.0">
+               <columns>
+                  <TableColumn fx:id="addms_fid" prefWidth="245.0" text="FIR ID" />
+                  <TableColumn fx:id="addms_ms" prefWidth="245.0" text="Missing since" />
+                  <TableColumn fx:id="addms_mplc" prefWidth="245.0" text="Missing from" />
+                  <TableColumn fx:id="addms_pstn" prefWidth="245.0" text="Police Station" />
+               </columns>
+            </TableView>
+            <TextField fx:id="addms_firid" layoutX="125.0" layoutY="477.0" prefHeight="31.0" prefWidth="200.0" />
+            <Label layoutX="46.0" layoutY="482.0" text="FIR ID">
+               <font>
+                  <Font name="System Bold" size="15.0" />
+               </font>
+            </Label>
+            <AnchorPane layoutX="744.0" layoutY="464.0" prefHeight="200.0" prefWidth="200.0" style="-fx-border-color: black;">
+               <children>
+                  <ImageView fx:id="msimg" fitHeight="200.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true" />
+               </children>
+            </AnchorPane>
+            <Button layoutX="613.0" layoutY="508.0" mnemonicParsing="false" onAction="#shwmsngimgbtnOnAction" prefHeight="31.0" prefWidth="121.0" styleClass="login-btn" text="SHOW" />
+            <Button layoutX="268.0" layoutY="719.0" mnemonicParsing="false" onAction="#insmsngbtnOnAction" prefHeight="31.0" prefWidth="121.0" styleClass="login-btn" text="INSERT" />
+            <Button fx:id="msngimprtbtn" layoutX="613.0" layoutY="472.0" mnemonicParsing="false" onAction="#imprtbtnOnAction" prefHeight="31.0" prefWidth="121.0" styleClass="login-btn" text="IMPORT" />
+            <DatePicker fx:id="addms_date" layoutX="125.0" layoutY="549.0" prefHeight="31.0" prefWidth="203.0" />
+            <TextField fx:id="addms_plc" layoutX="125.0" layoutY="624.0" prefHeight="31.0" prefWidth="200.0" />
+            <Label layoutX="46.0" layoutY="554.0" text="Date">
+               <font>
+                  <Font name="System Bold" size="15.0" />
+               </font>
+            </Label>
+            <Label layoutX="46.0" layoutY="629.0" prefHeight="21.0" prefWidth="43.0" text="Place">
+               <font>
+                  <Font name="System Bold" size="15.0" />
+               </font>
+            </Label>
+            <Button layoutX="397.0" layoutY="719.0" mnemonicParsing="false" onAction="#delmsngbtnOnAction" prefHeight="31.0" prefWidth="121.0" styleClass="login-btn" text="DELETE" />
+            <Button layoutX="525.0" layoutY="719.0" mnemonicParsing="false" onAction="#msngrefbtnOnAction" prefHeight="31.0" prefWidth="121.0" styleClass="login-btn" text="REFRESH" />
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>

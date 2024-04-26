@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="711.0" prefWidth="1090.0" style="-fx-background-color: #d0d9d2;" stylesheets="@admin.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="crimemgmt.LoginPageController">
+   <children>
+      <Label layoutX="85.0" layoutY="49.0" text="UID">
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font>
+      </Label>
+      <TextField fx:id="uid1" layoutX="234.0" layoutY="34.0" prefHeight="31.0" prefWidth="296.0" />
+      <Label layoutX="85.0" layoutY="121.0" text="New Password">
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font>
+      </Label>
+      <TextField fx:id="npswd" layoutX="234.0" layoutY="116.0" prefHeight="31.0" prefWidth="296.0" />
+      <Label layoutX="85.0" layoutY="276.0" text="OTP">
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font>
+      </Label>
+      <TextField fx:id="otpval" layoutX="234.0" layoutY="271.0" prefHeight="31.0" prefWidth="296.0" />
+      <Button layoutX="545.0" layoutY="271.0" mnemonicParsing="false" onAction="#sendotpbtnOnAction" styleClass="login-btn" text="SEND OTP" />
+      <Button layoutX="523.0" layoutY="641.0" mnemonicParsing="false" onAction="#forgotpswdchangebtnOnAction" prefHeight="38.0" prefWidth="92.0" styleClass="login-btn" text="CHANGE" />
+      <Label layoutX="85.0" layoutY="196.0" text="Security Key">
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font>
+      </Label>
+      <TextField fx:id="seckey" layoutX="234.0" layoutY="191.0" prefHeight="31.0" prefWidth="296.0" />
+   </children>
+</AnchorPane>

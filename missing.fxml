@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import javafx.scene.image.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="771.0" prefWidth="1147.0" style="-fx-background-color: #d0d9d2;" stylesheets="@admin.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="crimemgmt.LoginPageController">
+   <children>
+      <Label layoutX="107.0" layoutY="453.0" prefHeight="21.0" prefWidth="43.0" text="FID">
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font>
+      </Label>
+      <TextField fx:id="addms_firid" layoutX="157.0" layoutY="448.0" prefHeight="31.0" prefWidth="223.0" />
+      <AnchorPane layoutX="780.0" layoutY="431.0" prefHeight="200.0" prefWidth="200.0" style="-fx-border-color: black;">
+         <children>
+            <ImageView fx:id="msimg1" fitHeight="200.0" fitWidth="200.0" layoutX="1.0" pickOnBounds="true" preserveRatio="true" />
+         </children>
+      </AnchorPane>
+      <Button layoutX="640.0" layoutY="447.0" mnemonicParsing="false" onAction="#shwmsngimgbtnOnAction1" prefHeight="31.0" prefWidth="121.0" styleClass="login-btn" text="SHOW IMAGE" />
+      <Button fx:id="wntd_ref" layoutX="498.0" layoutY="602.0" mnemonicParsing="false" onAction="#refbtnOnAction" prefHeight="31.0" prefWidth="121.0" styleClass="login-btn" text="REFRESH" />
+      <TableView fx:id="addms_table" prefHeight="393.0" prefWidth="1147.0">
+        <columns>
+          <TableColumn fx:id="addms_fid" prefWidth="286.75" text="FID" />
+          <TableColumn fx:id="addms_ms" prefWidth="286.75" text="Missing since" />
+            <TableColumn fx:id="addms_mplc" prefWidth="286.75" text="Missing from" />
+            <TableColumn fx:id="addms_pstn" prefWidth="286.75" text="Police Station" />
+        </columns>
+      </TableView>
+   </children>
+</AnchorPane>
