@@ -10,3 +10,4 @@ This is a crime management system project.
 9. Police can update anything related to cases with FIRs filed only to their stations. Rest FIRs, they can view criminals caught or wanted.
 10. A public missing and wanted window which can be seen without login for greater public reach.
 11. Forgot password invloves OTP verification.
+12. 2 accounts won't have the same phone number and sign up process won't complete if same phone number.
