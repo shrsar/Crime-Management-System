@@ -11,3 +11,4 @@ This is a crime management system project.
 10. A public missing and wanted window which can be seen without login for greater public reach.
 11. Forgot password invloves OTP verification.
 12. 2 accounts won't have the same phone number and sign up process won't complete if same phone number.
+13. BulkSMS API used for OTP facility.
